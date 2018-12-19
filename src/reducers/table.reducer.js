@@ -202,11 +202,6 @@ export default (state = initialState, action) => {
       if (!hasMobileColumn) {
         newHeaders.push(getNewCell({ value: "Mobile", readOnly: true }));
       }
-      // add Survey column if not present
-      const hasSurveyColumn = newHeaders.find(e => e.value === "Survey");
-      if (!hasSurveyColumn) {
-        newHeaders.push(getNewCell({ value: "Survey", readOnly: true }));
-      }
       // set body
       const newRows = body.map(row => {
         const tmp = [];
