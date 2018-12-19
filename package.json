@@ -2,7 +2,13 @@
   "name": "react-excel",
   "version": "1.0.0",
   "description": "",
-  "keywords": [],
+  "keywords": [
+    "React",
+    "Excel",
+    "CSV Parser",
+    "Editable Table",
+    "Excel with React"
+  ],
   "main": "src/index.js",
   "dependencies": {
     "libphonenumber-js": "1.6.9",
@@ -14,6 +20,12 @@
     "redux-thunk": "2.3.0",
     "xlsx": "0.14.1"
   },
+  "author": "Jan Schroeder",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/janlukasschroeder/react-excel/issues"
+  },
+  "homepage": "https://github.com/janlukasschroeder/react-excel#readme",
   "devDependencies": {},
   "scripts": {
     "start": "react-scripts start",
@@ -21,5 +33,10 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
