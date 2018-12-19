@@ -48,12 +48,8 @@ class DataInput extends React.Component {
   render() {
     return (
       <>
-        <button
-          style={{ marginLeft: 10 }}
-          onClick={() => this.fileInput.current.click()}
-        >
-          <i className="fas fa-upload" />
-          &nbsp; Import File
+        <button onClick={() => this.fileInput.current.click()}>
+          Import File
         </button>
         <input
           ref={this.fileInput}

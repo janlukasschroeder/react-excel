@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import UncontrolledCell from "./CellUncontrolled";
-import SelectSurvey from "./SelectSurvey";
 
 import {
   addColumn,
@@ -83,10 +82,6 @@ class Cell extends React.Component {
         onMouseEnter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave}
       >
-        {type === "survey" && (
-          <SelectSurvey onChange={this.onChange} defaultValue={value} />
-        )}
-
         {type === "text" && (
           <UncontrolledCell
             id={id}

@@ -11,8 +11,6 @@ const SET_BODY = "SET_BODY";
 const SET_TABLE = "SET_TABLE";
 const VALIDATE_CELLS = "VALIDATE_CELLS";
 const PARSE_CELLS = "PARSE_CELLS";
-const LIST_SURVEYS = "LIST_SURVEYS";
-const CREATE_PATIENTS_AND_SEND_SURVEYS = "CREATE_PATIENTS_AND_SEND_SURVEYS";
 
 export const addColumn = after => ({ type: ADD_COLUMN, after });
 export const deleteColumn = column => ({ type: DELETE_COLUMN, column });
@@ -32,20 +30,8 @@ export const setTable = rows => dispatch => {
 export const validateCells = () => ({ type: VALIDATE_CELLS });
 export const parseCells = () => ({ type: PARSE_CELLS });
 
-export const listSurveys = () => dispatch => {
-  return request(LIST_SURVEYS).then(({ response }) =>
-    dispatch({ type: LIST_SURVEYS, surveys: response })
-  );
-};
-
-export const createPatientsAndSendSurveys = () => dispatch => {
-  return dispatch(validateCells());
-};
-
 export const initialiseTable = () => dispatch => {
-  return request(LIST_SURVEYS)
-    .then(({ response }) => dispatch({ type: LIST_SURVEYS, surveys: response }))
-    .then(() => dispatch(addRow()));
+  dispatch(addRow());
 };
 
 const getNewCell = ({ value = "", readOnly = null, type = "text" } = {}) => {
@@ -115,8 +101,7 @@ const initialState = {
       readOnly: true
     }
   ],
-  rows: [],
-  surveys: []
+  rows: []
 };
 
 export default (state = initialState, action) => {
@@ -159,11 +144,8 @@ export default (state = initialState, action) => {
     case ADD_ROW: {
       const { after = 0 } = action;
       const newColumns = state.headers.map(h => {
-        const isSurvey = h.value === "Survey";
-        const type = isSurvey ? "survey" : "text";
-        const value =
-          isSurvey && state.surveys.length === 1 ? state.surveys[0].name : "";
-        return getNewCell({ type, value });
+        const type = "text";
+        return getNewCell({ type });
       });
       const newRow = [newColumns];
       const rowsBefore = [...state.rows].slice(0, after);
@@ -272,12 +254,6 @@ export default (state = initialState, action) => {
         });
       });
       return { ...state, rows: newRows };
-    }
-    // case CREATE_PATIENTS_AND_SEND_SURVEYS: {
-
-    // }
-    case LIST_SURVEYS: {
-      return { ...state, surveys: action.surveys };
     }
     default:
       return state;

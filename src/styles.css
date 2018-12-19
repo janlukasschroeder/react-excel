@@ -5,6 +5,10 @@ body {
   font-size: 14px;
 }
 
+button {
+  margin-right: 10px;
+}
+
 .nav-bar {
   height: 64px;
   background: #dfe7ed;
