@@ -2,9 +2,9 @@
 
 Demo: https://9899ojyx5o.codesandbox.io/
 
-![demo1](http://www.giphy.com/gifs/8TCiy58ZfqsNM2nH7i)
+![demo1](https://media.giphy.com/media/2YraOA5CPXuvr4ylQb/giphy.gif)
 
-![demo2](http://www.giphy.com/gifs/fnDSNhoU39jg7NUDKa)
+![demo2](https://media.giphy.com/media/SGCvUiciyg9KRONJ5g/giphy.gif)
 
 ## Features
 
