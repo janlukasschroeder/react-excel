@@ -209,12 +209,10 @@ export default (state = initialState, action) => {
       }
       // set body
       const newRows = body.map(row => {
-        const { surveys } = state;
         const tmp = [];
         for (let i = 0; i < newHeaders.length; i++) {
-          const isSurvey = newHeaders[i].value === "Survey";
-          const type = isSurvey ? "survey" : "text";
-          const value = row[i] || (surveys.length ? surveys[0].name : "");
+          const type = "text";
+          const value = row[i] || "";
           tmp.push(getNewCell({ type, value }));
         }
         return tmp;

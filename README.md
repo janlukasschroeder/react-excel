@@ -11,6 +11,7 @@ Demo: https://9899ojyx5o.codesandbox.io/
 - Write custom `validate` functions to validate the content of each cell in a given column.
 - Mobile number validation function included. All cells in column `Mobile` are validated using `libphonenumber-js`.
 - Set headers as `read-only`, ie. preventing a column to be deleted.
+- Add new row on `Tab` when cursor is located in last cell
 
 ## Stack
 
