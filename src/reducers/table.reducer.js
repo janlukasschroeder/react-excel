@@ -1,4 +1,3 @@
-import { request } from "../services/api.service";
 import { parsePhoneNumber } from "libphonenumber-js";
 
 const ADD_COLUMN = "ADD_COLUMN";
@@ -45,7 +44,7 @@ const getNewCell = ({ value = "", readOnly = null, type = "text" } = {}) => {
   if (readOnly !== null) {
     cell.readOnly = readOnly;
   } else if (
-    value === "Survey" ||
+    value === "Last Name" ||
     value === "First Name" ||
     value === "Mobile"
   ) {
@@ -54,7 +53,6 @@ const getNewCell = ({ value = "", readOnly = null, type = "text" } = {}) => {
 
   if (value === "Mobile") {
     cell.validate = validateMobileNumber;
-    cell.parse = parseMobileNumber;
   }
 
   return cell;
@@ -69,15 +67,6 @@ const validateMobileNumber = number => {
   }
 };
 
-const parseMobileNumber = number => {
-  try {
-    const phoneNumber = parsePhoneNumber(number, "AU");
-    return phoneNumber.formatInternational();
-  } catch (error) {
-    return number;
-  }
-};
-
 const initialState = {
   headers: [
     {
@@ -89,16 +78,15 @@ const initialState = {
     {
       id: 2,
       type: "text",
-      value: "Mobile",
-      readOnly: true,
-      validate: validateMobileNumber,
-      parse: parseMobileNumber
+      value: "Last Name",
+      readOnly: true
     },
     {
       id: 3,
       type: "text",
-      value: "Survey",
-      readOnly: true
+      value: "Mobile",
+      readOnly: true,
+      validate: validateMobileNumber
     }
   ],
   rows: []

@@ -9,14 +9,8 @@ button {
   margin-right: 10px;
 }
 
-.nav-bar {
-  height: 64px;
-  background: #dfe7ed;
-}
-
 .content {
   margin: 0 10% 0 10%;
-  /* border: 1px solid black; */
   padding: 5%;
   box-sizing: border-box;
   height: calc(100vh - 84px);
@@ -25,13 +19,8 @@ button {
 .table-wrapper {
   box-sizing: border-box;
   overflow: auto;
-  padding: 25px 15px 25px 20px;
-}
-
-.table {
-  /* padding-top: 15px; */
-  /* padding-right: 15px; */
-  /* width: 100%; */
+  padding: 0px 15px 25px 20px;
+  height: calc(100vh - 84px);
 }
 
 .header,
@@ -39,32 +28,45 @@ button {
   display: flex;
   box-sizing: border-box;
   justify-content: space-between;
-  position: relative;
+  background: white;
 }
 
-.header > .cell {
-  background: #f5f5f5;
-  border-top: 1px solid black;
+.header {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  width: 100%;
+}
+
+.header .cell {
+  box-sizing: border-box;
+  background: #fafafa;
+  border-top: 1px solid #e8e8e8;
+  font-weight: 500;
 }
 
 .cell {
   position: relative;
   flex: 1;
-  /* min-height: 35px; */
   line-height: 30px;
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;
+  border-right: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
   padding-left: 5px;
   min-width: 150px;
   box-sizing: border-box;
+  background: white;
 }
 
-.cell:first-of-type {
-  border-left: 1px solid black;
+.header-cell-wrapper {
+  flex: auto;
+  padding-top: 35px;
+  background: white;
 }
 
-.cell:last-of-type {
-  /* margin-right: 15px; */
+.row .cell:first-of-type,
+.header .header-cell-wrapper:first-of-type .cell {
+  border-left: 1px solid #e8e8e8;
 }
 
 .cell[contentEditable="true"] {

@@ -2,6 +2,10 @@
 
 Demo: https://9899ojyx5o.codesandbox.io/
 
+![demo1](http://www.giphy.com/gifs/8TCiy58ZfqsNM2nH7i)
+
+![demo2](http://www.giphy.com/gifs/fnDSNhoU39jg7NUDKa)
+
 ## Features
 
 - Upload Excel/CSV file (nothing is actually being uploaded; the file is processed by your browser).

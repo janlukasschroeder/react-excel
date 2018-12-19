@@ -7,7 +7,9 @@ class Headers extends React.Component {
     return (
       <div className={"header"}>
         {this.props.headers.map((cell, j) => (
-          <Cell {...cell} isHeader={true} key={cell.id} column={j} />
+          <div className={"header-cell-wrapper"} key={cell.id}>
+            <Cell {...cell} isHeader column={j} />
+          </div>
         ))}
       </div>
     );
